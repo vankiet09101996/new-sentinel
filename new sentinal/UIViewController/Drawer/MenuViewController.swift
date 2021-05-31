@@ -35,39 +35,39 @@ class MenuViewController: UIViewController {
         
         var imageView : UIImageView
             imageView  = UIImageView(frame:CGRect(x: 70.5, y: 45, width: 121, height: 28));
-            imageView.image = UIImage(named:"sentinel-logo-300x70.png")
+            imageView.image = UIImage(named:"stn_logo.png")
             View2.addSubview(imageView)
         
         
         
-        let label = UILabel(frame: CGRect(x: 93, y: 86, width: 80, height: 13))
-            label.font = UIFont.systemFont(ofSize: 13)
-            label.textAlignment = .center
-            label.textColor = .gray
-            label.text = "Version 0.0.3"
-            View2.addSubview(label)
+        let versionlabel = UILabel(frame: CGRect(x: 93, y: 86, width: 80, height: 13))
+            versionlabel.font = UIFont.systemFont(ofSize: 13)
+            versionlabel.textAlignment = .center
+            versionlabel.textColor = .gray
+            versionlabel.text = "Version 0.0.3"
+            View2.addSubview(versionlabel)
         
-        let label2 = UILabel(frame: CGRect(x: 24, y: 133, width: 109, height: 17))
-            label2.font = UIFont.systemFont(ofSize: 17)
-            label2.textAlignment = .left
-            label2.textColor = .black
-            label2.text = "Logged in as"
-            View2.addSubview(label2)
+        let loginAddLabel = UILabel(frame: CGRect(x: 24, y: 133, width: 109, height: 17))
+            loginAddLabel.font = UIFont.systemFont(ofSize: 17)
+            loginAddLabel.textAlignment = .left
+            loginAddLabel.textColor = .black
+            loginAddLabel.text = "Logged in as"
+            View2.addSubview(loginAddLabel)
         
-        let label3 = UILabel(frame: CGRect(x: 24, y: 161, width: 227, height: 17))
-            label3.font = UIFont.systemFont(ofSize: 17)
-            label3.textAlignment = .left
-            label3.textColor = .black
-            label3.text = "thomas@prestagefarms.com"
-            View2.addSubview(label3)
+        let emailLabel = UILabel(frame: CGRect(x: 24, y: 161, width: 227, height: 17))
+            emailLabel.font = UIFont.systemFont(ofSize: 17)
+            emailLabel.textAlignment = .left
+            emailLabel.textColor = .black
+            emailLabel.text = emailShowDrawer
+            View2.addSubview(emailLabel)
         
-        let button = UIButton(frame: CGRect(x: 24, y: 757, width: 74, height: 17))
-            button.backgroundColor = .white
-            button.setTitle("Sign Out", for: .normal)
-            button.setTitleColor(.red, for: .normal)
+        let signOutButton = UIButton(frame: CGRect(x: 24, y: 757, width: 74, height: 17))
+            signOutButton.backgroundColor = .white
+            signOutButton.setTitle("Sign Out", for: .normal)
+            signOutButton.setTitleColor(.red, for: .normal)
 
-            button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-            View2.addSubview(button)
+            signOutButton.addTarget(self, action: #selector(onSignOut), for: .touchUpInside)
+            View2.addSubview(signOutButton)
             
         
 //        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender: )))
@@ -86,7 +86,7 @@ class MenuViewController: UIViewController {
     }
     
     
-    @objc func buttonAction(sender: UIButton!) {
+    @objc func onSignOut(sender: UIButton!) {
         initView()
     }
     
@@ -98,7 +98,7 @@ class MenuViewController: UIViewController {
     })
     }
     func initView() {
-        let vic = navViewController()
+        let vic = NavViewController()
         self.view.window?.rootViewController = vic
         self.view.window?.makeKeyAndVisible()
     }

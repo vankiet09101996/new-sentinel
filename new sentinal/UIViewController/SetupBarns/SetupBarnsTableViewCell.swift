@@ -9,15 +9,12 @@ import UIKit
 
 class SetupBarnsTableViewCell: UITableViewCell {
 //    var updateNameCallBack: ((_ data: SiteObj) -> Void)?
-    @IBOutlet weak var barnName: UILabel!
-    @IBOutlet weak var number: UILabel!
+    @IBOutlet weak var barnNameLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    
     @IBOutlet weak var barnNameTextField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
-    
    
-    
-    
-    
     
     
     
